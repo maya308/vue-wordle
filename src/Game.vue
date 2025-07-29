@@ -188,10 +188,10 @@ function genResultGrid() {
     </div>
   </Transition>
   <header>
-    <h1>VVORDLE</h1>
+    <h1>ZAINA BABY WORDLE</h1>
     <a
       id="source-link"
-      href="https://github.com/yyx990803/vue-wordle"
+      href="https://github.com/mayamoktan308/zaina-baby-name-wordle"
       target="_blank"
       >Source</a
     >
