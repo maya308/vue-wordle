@@ -191,7 +191,7 @@ function genResultGrid() {
     <h1>ZAINA BABY!</h1>
     <a
       id="source-link"
-      href="https://github.com/mayamoktan308/zaina-baby-name-wordle"
+      href="https://github.com/maya308/zaina-baby-name-wordle.git"
       target="_blank"
       >Source</a
     >
