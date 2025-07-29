@@ -74,16 +74,19 @@ function clearTile() {
 function completeRow() {
   if (currentRow.every((tile) => tile.letter)) {
     const guess = currentRow.map((tile) => tile.letter).join('')
-    // add stuff to catch funny words like 
-    // fuck
-    // shit
-    // cunt
-    // dick
-    // if (!allWords.includes(guess) && guess !== answer) {
-    //   shake()
-    //   showMessage(`Not in word list`)
-    //   return
-    // }
+    // Catch bad words; I am predicting that Brad guesses the word 'fuck'
+    // Brad's use case:
+    if (guess == 'fuck') {
+      shake()
+      showMessage(`Feckin eejit!`)
+      return
+    }
+    const otherBadWords = ['shit','dick','cunt']
+    if (!otherBadWords.includes(guess) && guess !== answer) {
+      shake()
+      showMessage(`Don't be nasty.`)
+      return
+    }
 
     const answerLetters: (string | null)[] = answer.split('')
     // first pass: mark correct ones
@@ -119,7 +122,7 @@ function completeRow() {
       setTimeout(() => {
         grid = genResultGrid()
         showMessage(
-          ['Genius', 'Magnificent', 'Impressive', 'Splendid', 'Great', 'Phew'][
+          ['Psychic!', 'Perspicacious!', 'Damn!', 'Splendid', 'Great', 'Phew'][
             currentRowIndex
           ],
           -1
