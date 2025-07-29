@@ -5,12 +5,13 @@ import Keyboard from './Keyboard.vue'
 import { LetterState } from './types'
 
 // Get word of the day
-const answer = getWordOfTheDay()
+// const answer = getWordOfTheDay()
+const answer = "jack"
 
 // Board state. Each tile is represented as { letter, state }
 const board = $ref(
-  Array.from({ length: 6 }, () =>
-    Array.from({ length: 5 }, () => ({
+  Array.from({ length: 5 }, () =>
+    Array.from({ length: 4 }, () => ({
       letter: '',
       state: LetterState.INITIAL
     }))
@@ -73,11 +74,16 @@ function clearTile() {
 function completeRow() {
   if (currentRow.every((tile) => tile.letter)) {
     const guess = currentRow.map((tile) => tile.letter).join('')
-    if (!allWords.includes(guess) && guess !== answer) {
-      shake()
-      showMessage(`Not in word list`)
-      return
-    }
+    // add stuff to catch funny words like 
+    // fuck
+    // shit
+    // cunt
+    // dick
+    // if (!allWords.includes(guess) && guess !== answer) {
+    //   shake()
+    //   showMessage(`Not in word list`)
+    //   return
+    // }
 
     const answerLetters: (string | null)[] = answer.split('')
     // first pass: mark correct ones
