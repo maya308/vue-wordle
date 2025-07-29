@@ -82,7 +82,7 @@ function completeRow() {
       return
     }
     const otherBadWords = ['shit','dick','cunt']
-    if (!otherBadWords.includes(guess) && guess !== answer) {
+    if (otherBadWords.includes(guess)) {
       shake()
       showMessage(`Don't be nasty.`)
       return
